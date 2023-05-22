@@ -1,0 +1,17 @@
+<div>
+        <h1>
+            Crud básico
+            <ul>
+                <li><a href="http://localhost/cad">Cadastro</a></li>
+            </ul>
+            <h3>
+                {{#each posts}}
+                
+                <h1>{{dataValues.titulo}}</h1>
+                <p>{{dataValues.conteudo}}</p>
+                <a href="/deletar/{{dataValues.id}}"><button>Deletar</button></a>
+                <hr>
+                {{/each}}
+            </h3>
+        </h1>
+    </div>
