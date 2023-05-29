@@ -62,7 +62,7 @@ app.post('/atualizar/:id', async (req, res) => {
       email: req.body.email
     };
   
-    await empregadoDAO.atualizarEmpregrado(id, empregado);
+    await empregadoDAO.atualizarEmpregado(id, empregado);
     res.redirect('/list');
   });
 

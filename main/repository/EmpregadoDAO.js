@@ -28,11 +28,12 @@ async function buscarEmpregado(id) {
     return await con.execute(SQL_SELECT_BY_ID, values);
   }
 
-async function atualizarEmpregado(id, empregado){
-    const SQL_UPDATE = 'UPDATE empregado SET nome = ?, logradouro = ?, cep = ?, numero = ?, complemento = ?, telefone = ?, email = ? WHERE Empregadoid = ?';
+  async function atualizarEmpregado(id, empregado) {
+    const SQL_UPDATE = `UPDATE empregado SET nome = ?, logradouro = ?, cep = ?, numero = ?, complemento = ?, telefone = ?, email = ? WHERE Empregadoid = ?`;
     const con = await mysql.getConnection();
     const values = [empregado.nome, empregado.logradouro, empregado.cep, empregado.numero, empregado.complemento, empregado.telefone, empregado.email, id];
     return await con.execute(SQL_UPDATE, values);
-}
+  }
+  
 
 module.exports = {salvarEmpregado,listarEmpregado,deletarEmpregado, buscarEmpregado, atualizarEmpregado}

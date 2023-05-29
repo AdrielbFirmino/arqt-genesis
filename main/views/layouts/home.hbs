@@ -5,19 +5,6 @@
                 <li><a href="http://localhost:3307/cad">Cadastro</a></li>
                 <li><a href="http://localhost:3307/list">Listagem</a></li>
             </ul>
-            <h3>
-                {{#each posts}}
-
-                <h1>{{dataValues.nome}}</h1>
-                <p>{{dataValues.logradouro}}</p>
-                <p>{{dataValues.cep}}</p>
-                <p>{{dataValues.numero}}</p>
-                <p>{{dataValues.complemento}}</p>
-                <p>{{dataValues.telefone}}</p>
-                <p>{{dataValues.email}}</p>
-                <a href="/deletar/{{dataValues.id}}"><button>Deletar</button></a>
-                <hr>
-                {{/each}}
-            </h3>
+            
         </h1>
     </div>
