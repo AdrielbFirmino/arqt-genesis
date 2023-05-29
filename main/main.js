@@ -18,8 +18,8 @@ app.get('/cad', (req, res)=>{
     res.render('main',{layout:'form'})
 });
 
-app.get('/list', (req, res)=>{
-    const [empregados] = empregadoDAO.listarEmpregado();
+app.get('/list',async (req, res)=>{
+    const [empregados] = await empregadoDAO.listarEmpregado();
     res.render('main',{layout:'lista',empregados});
 })
 
