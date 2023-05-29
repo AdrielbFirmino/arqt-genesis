@@ -4,9 +4,9 @@ async function getConnection(){
         return global.connection;
     }
 
-    const mysql = await require('mysql2/promise');
+    const mysql = require('mysql2/promise');
 
-    const con = await mysql.createConnection('mysql://root:root@localhost:3306/ecom');
+    const con = await mysql.createConnection('mysql://root:55299@localhost:3306/ecom');
     global.connection = con;
     return con;
 

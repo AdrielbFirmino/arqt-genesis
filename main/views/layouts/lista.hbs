@@ -1,0 +1,27 @@
+<h1>Listando Empregados</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Logradouro</td>
+            <td>Cep</td>
+            <td>Numero</td>
+            <td>Complemento</td>
+            <td>Telefone</td>
+            <td>Email</td>
+            <td colspan="2">Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each empregados}}
+        <tr>
+            <td>{{nome}}</td>
+            <td>{{idade}}</td>
+            <td>{{cargo}}</td>
+            <td><a href="">Editar</a></td>
+            <td><a href="">Remover</a></td>
+        </tr>
+       
+        {{/each}}
+    </tbody>
+</table>
