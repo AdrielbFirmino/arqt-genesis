@@ -14,4 +14,25 @@ async function listarEmpregado(){
     return await con.execute(SQL_SELECT);
 }
 
-module.exports = {salvarEmpregado,listarEmpregado}
+async function deletarEmpregado(id){
+    const SQL_DELETE = 'DELETE FROM empregado WHERE Empregadoid = ?';
+    const con = await mysql.getConnection();
+    const values =[id];
+    return await con.execute(SQL_DELETE, values);
+}
+
+async function buscarEmpregado(id) {
+    const SQL_SELECT_BY_ID = 'SELECT Empregadoid, nome, logradouro, cep, numero, complemento, telefone, email FROM empregado WHERE Empregadoid = ?';
+    const con = await mysql.getConnection();
+    const values = [id];
+    return await con.execute(SQL_SELECT_BY_ID, values);
+  }
+
+async function atualizarEmpregado(id, empregado){
+    const SQL_UPDATE = 'UPDATE empregado SET nome = ?, logradouro = ?, cep = ?, numero = ?, complemento = ?, telefone = ?, email = ? WHERE Empregadoid = ?';
+    const con = await mysql.getConnection();
+    const values = [empregado.nome, empregado.logradouro, empregado.cep, empregado.numero, empregado.complemento, empregado.telefone, empregado.email, id];
+    return await con.execute(SQL_UPDATE, values);
+}
+
+module.exports = {salvarEmpregado,listarEmpregado,deletarEmpregado, buscarEmpregado, atualizarEmpregado}

@@ -1,0 +1,19 @@
+<h1>Editar Empregado</h1>
+<form action="/atualizar/{{empregado.Empregadoid}}" method="POST">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" value="{{empregado.nome}}" required>
+  <label for="logradouro">Logradouro:</label>
+  <input type="text" id="logradouro" name="logradouro" value="{{empregado.logradouro}}">
+  <label for="cep">CEP:</label>
+  <input type="text" id="cep" name="cep" value="{{empregado.cep}}">
+  <label for="numero">Número:</label>
+  <input type="text" id="numero" name="numero" value="{{empregado.numero}}">
+  <label for="complemento">Complemento:</label>
+  <input type="text" id="complemento" name="complemento" value="{{empregado.complemento}}">
+  <label for="telefone">Telefone:</label>
+  <input type="text" id="telefone" name="telefone" value="{{empregado.telefone}}">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" value="{{empregado.email}}">
+  <button type="submit">Atualizar</button>
+</form>
+<button><a href="http://localhost:3307/list">Voltar</a></button>

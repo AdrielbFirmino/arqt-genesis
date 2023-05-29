@@ -22,10 +22,11 @@
             <td>{{complemento}}</td>
             <td>{{telefone}}</td>
             <td>{{email}}</td>
-            <td><a href="">Editar</a></td>
-            <td><a href="">Remover</a></td>
+            <td><a href="http://localhost:3307/editar/{{Empregadoid}}">Editar</a></td>
+            <td><a href="http://localhost:3307/deletar/{{Empregadoid}}">Remover</a></td>
         </tr>
        
         {{/each}}
     </tbody>
 </table>
+<button><a href="http://localhost:3307">Voltar</a></button>

@@ -21,7 +21,7 @@ app.get('/cad', (req, res)=>{
 app.get('/list',async (req, res)=>{
     const [empregados] = await empregadoDAO.listarEmpregado();
     res.render('main',{layout:'lista',empregados});
-})
+});
 
 app.post('/cad',async(req,res)=>{
     const empregado ={
@@ -37,6 +37,34 @@ app.post('/cad',async(req,res)=>{
    await empregadoDAO.salvarEmpregado(empregado);
     res.redirect('/');
 });
+
+app.get('/deletar/:id', async (req, res) => {
+    const id = req.params.id;
+    await empregadoDAO.deletarEmpregado(id);
+    res.redirect('/list');
+});
+
+app.get('/editar/:id', async (req, res) => {
+    const id = req.params.id;
+    const [empregado] = await empregadoDAO.buscarEmpregado(id);
+    res.render('main', { layout: 'editar', empregado });
+});
+
+app.post('/atualizar/:id', async (req, res) => {
+    const id = req.params.id;
+    const empregado = {
+      nome: req.body.nome,
+      logradouro: req.body.logradouro,
+      cep: req.body.cep,
+      numero: req.body.numero,
+      complemento: req.body.complemento,
+      telefone: req.body.telefone,
+      email: req.body.email
+    };
+  
+    await empregadoDAO.atualizarEmpregrado(id, empregado);
+    res.redirect('/list');
+  });
 
 app.listen(3307, function(){
     console.log("Servidor rodando na url http://localhost:3307");
